@@ -1,0 +1,71 @@
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+## MonoDevelop property cache
+*.mono
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Re]leases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bsearch/
+gconfigs/
+bin/
+obj/
+Generated_Code/
+
+## Tool outputs
+_ReSharper*/
+*.[Cc]Dot[Cc]over
+*.resource
+*.generated
+
+## Results analysis files
+*.msm
+*.mdf
+*.ldf
+*.ndf
+
+## Packages directory
+*.nupkg
+# NuGet Packages
+**/packages/*
+# Un-comment the line below if you want to avoid checking in NuGet packages
+#!**/packages/build/
+
+## Visual Studio 2015/2017/2019/2022 cache directory
+.vs/
+# Generated turn-by-turn Microsoft tests
+TestResults/
+
+## Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+## Rider
+.idea/
+
+## Windows temporary files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Mac OS temporary files
+.DS_Store
+.AppleDouble
+.LSOverride

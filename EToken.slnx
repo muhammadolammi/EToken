@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="EToken.Api/EToken.Api.csproj" />
+  <Project Path="EToken.Application/EToken.Application.csproj" />
+  <Project Path="EToken.Domain/EToken.Domain.csproj" />
+  <Project Path="EToken.Infrastructure/EToken.Infrastructure.csproj" />
+  <Project Path="EToken.Tests/EToken.Tests.csproj" />
+</Solution>
