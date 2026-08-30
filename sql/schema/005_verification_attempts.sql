@@ -3,7 +3,8 @@
 IF OBJECT_ID(N'dbo.verification_attempts', N'U') IS  NULL
 BEGIN 
 
-CREATE TABLE  verification_attempts (cif NVARCHAR(20) PRIMARY KEY,
+CREATE TABLE  verification_attempts (
+    cif UNIQUEIDENTIFIER NOT NULL REFERENCES users(cif) ON DELETE CASCADE, 
 failed_count INT NOT NULL DEFAULT 0,
 locked_until DATETIMEOFFSET NULL
 );

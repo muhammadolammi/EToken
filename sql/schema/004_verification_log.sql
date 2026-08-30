@@ -5,8 +5,8 @@ IF OBJECT_ID(N'dbo.verification_log', N'U') IS  NULL
 BEGIN 
 CREATE TABLE verification_log (
 id BIGINT IDENTITY PRIMARY KEY,
-cif NVARCHAR(20) NOT NULL,
-device_id UNIQUEIDENTIFIER NOT NULL,
+cif UNIQUEIDENTIFIER NOT NULL REFERENCES users(cif) ON DELETE CASCADE, 
+device_id UNIQUEIDENTIFIER NOT NULL REFERENCES customer_devices(device_id),
 action_type NVARCHAR(20) NOT NULL, -- login | transaction | other
 result NVARCHAR(20) NOT NULL, -- success | failed | locked_out
 ip_address NVARCHAR(45),

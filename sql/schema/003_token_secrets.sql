@@ -5,7 +5,7 @@ IF OBJECT_ID(N'dbo.token_secrets', N'U') IS NULL
 BEGIN
 CREATE TABLE  token_secrets (
 id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-cif NVARCHAR(20) NOT NULL,
+cif UNIQUEIDENTIFIER NOT NULL REFERENCES users(cif) ON DELETE CASCADE, 
 device_id UNIQUEIDENTIFIER NOT NULL REFERENCES customer_devices(device_id),
 encrypted_secret VARBINARY(MAX) NOT NULL, -- ciphertext from KMS/Key Vault
 last_accepted_bucket BIGINT NOT NULL DEFAULT 0,

@@ -1,5 +1,5 @@
 
-namespace EToken.Domain.Services;
+namespace EToken.Application.Services;
 
 
 public interface ITotpService

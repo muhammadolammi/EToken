@@ -1,7 +1,7 @@
 using EToken.Application.Interfaces;
 using EToken.Domain.Entities;
 
-namespace EToken.Application.Services;
+namespace EToken.Infrastructure.Services;
 
 public class CustomerDeviceService(ICustomerDeviceRepository repo) : ICustomerDeviceService
 {
@@ -10,10 +10,10 @@ public class CustomerDeviceService(ICustomerDeviceRepository repo) : ICustomerDe
     public async Task<CustomerDevice?> GetDeviceByIdAsync(Guid deviceId, CancellationToken ct = default) =>
         await _repo.GetByIdAsync(deviceId, ct);
 
-    public async Task<IEnumerable<CustomerDevice>> GetDevicesByCifAsync(string cif, CancellationToken ct = default) =>
+    public async Task<IEnumerable<CustomerDevice>> GetDevicesByCifAsync(Guid cif, CancellationToken ct = default) =>
         await _repo.GetAllByCifAsync(cif, ct);
 
-    public async Task<CustomerDevice> RegisterDeviceAsync(string cif, string? deviceModel, CancellationToken ct = default)
+    public async Task<CustomerDevice> RegisterDeviceAsync(Guid cif,Guid deviceIdd, string? deviceModel, CancellationToken ct = default)
     {
         // Business Rule: Check if user already has an active device
         var activeDevice = await _repo.GetActiveByCifAsync(cif, ct);
@@ -24,7 +24,7 @@ public class CustomerDeviceService(ICustomerDeviceRepository repo) : ICustomerDe
 
         var newDevice = new CustomerDevice
         {
-            DeviceId = Guid.NewGuid(),
+            DeviceId = deviceIdd,
             Cif = cif,
             DeviceModel = deviceModel,
             Status = "inactive",
